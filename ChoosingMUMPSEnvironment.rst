@@ -13,5 +13,5 @@ VistA requires an underlying MUMPS environment. OSEHRA currently supports two op
 * Next Step:  `Installing Cache`_
 * Next Step: `Installing GT.M`_
 
-.. _`Installing Cache`: InstallCache.html
-.. _`Installing GT.M`: InstallGTM.html
+.. _`Installing Cache`: InstallCache.rst
+.. _`Installing GT.M`: InstallGTM.rst
