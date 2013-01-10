@@ -18,8 +18,7 @@ The instructions comprise six sections corresponding to:
   :maxdepth: 2
   
   ObtainingandInstallAuxPrograms
-  ObtainingTestingCode
-  ConfiguringTestEnvironment
+  ChoosingMUMPSEnvironment
 
 For the following two sections, follow the instructions based upon which type of MUMPS database will be utilized:
 
@@ -39,11 +38,12 @@ GT.M:
   InstallGTM
   ImportGTM
   
-The last sections are common to both types of systems:
+The last sections are common to both types of systems and are specific to the OSEHRA-Automated-Testing Framework:
 
 .. toctree::
   :maxdepth: 2
-  
+
+  ObtainingTestingCode  
   SetupTestingEnvironment
   RunningandUploadingTests
   ReviewingResults

@@ -1,4 +1,4 @@
-Configuring the Testing Environment
+Choosing the MUMPS Environment
 ===================================
 
 .. toctree::

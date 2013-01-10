@@ -24,4 +24,4 @@ Use Git to make a local clone of this repository:
   .
   $ :usertype:`cd OSEHRA-Automated-Testing`
 
-Throughout these wiki pages, the Testing Source Directory will refer to the location of this folder.
+Throughout these documentation pages, the Testing Source Directory will refer to the location of this folder.
