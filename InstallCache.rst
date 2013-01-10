@@ -3,6 +3,8 @@ Installing InterSystems Cache
 
 .. toctree::
 
+.. |Cache1| image:: _static/images/InstallPNGs/Cache1.png
+    :alt: Cache License Text
 
 .. role:: usertype
     :class: usertype
@@ -17,8 +19,7 @@ Download and Install Cache
 Download the Cache installer from the above link and double click on the downloaded  .exe file. The first window that requires interaction is the Licensing Agreement shown in Figure 1. Agree to the license in order to continue in the installation process.
 
 
-.. image:: _static/images/InstallPNGs/Cache1.png
-    :alt: Cache License Text
+  |Cache1|
 
 
 The next window, Figure 2, asks to set the directory in which Cache will be installed. Most users will be able to accept the default path. If more than one instance is found on the machine, the next instances will be denoted with a number appended to the end of the instance name.
