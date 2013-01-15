@@ -240,3 +240,8 @@ texinfo_documents = [
 
 # How to display URL addresses: 'footnote', 'no', or 'inline'.
 #texinfo_show_urls = 'footnote'
+
+rst_epilog = """
+.. |InstallCache.rst| replace:: :doc:`InstallCache`
+.. |InstallGTM.rst| replace:: :doc:`InstallGTM`
+"""
