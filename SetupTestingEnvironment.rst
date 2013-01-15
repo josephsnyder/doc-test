@@ -12,26 +12,30 @@ To configure the environment for testing, start the cmake-gui.exe. Once it has s
 Once those are set, click the Configure button. The interface will then ask you to specify a generator (Figure 74). These are normally used to check for working C and C++ compilers. For VistA testing, the generator does nothing and it therefore not used. This selection can be chosen arbitrarily to any displayed generator so we recommend selecting the default value. Click finish after the selection is made to continue the configuration process.
 
 
-.. image:: _static/images/InstallPNGs/cmake73.png
+.. figure:: http://code.osehra.org/content/SHA-1/e7e145f2b7ff14c0eae417dc648da9f6c6b04efe-CMakeGUIHighlights.png
+   :align: center
 
-Figure 73 - Initial cmake-gui page.
+   Figure 73 - Initial cmake-gui page.
 
 
-.. image:: _static/images/InstallPNGs/cmake74.png
+.. figure:: http://code.osehra.org/content/SHA-1/6f19f4467a9b91b2eca8ff0304a55c2614438021-CMakeGUIGeneratorSelection.png
+   :align: center
 
-Figure 74 - Generator selection.
+   Figure 74 - Generator selection.
 
 Following generator selection, the interface will produce a highlighted display such as in Figure 75 for Linux and Figure 76 for Windows. The entries in the window are the variables which can be set to control the testing process. Most of the values should be set correctly by the automated configuration process, but the scripting environment and the location of the VistA source code may need to be set appropriately. To aid in the configuring, most variables have a mouse-over tip which explains in greater detail what the variable should contain.
 
 
-.. image:: _static/images/InstallPNGs/cmake75.png
+.. figure:: http://code.osehra.org/content/SHA-1/26d73c05bbf4edf7029aea5f5e68018512f1193e-CMakeGUILinuxPostConfig.png
+   :align: center
 
-Figure 75 - Linux interface after generator selection is complete.
+   Figure 75 - Linux interface after generator selection is complete.
 
 
-.. image:: _static/images/InstallPNGs/cmake76.png
+.. figure:: http://code.osehra.org/content/SHA-1/c58f3fa39356ff6d0f42b09dd827bf23a398087a-CMakeGUIWinPostConfig.png
+   :align: center
 
-Figure 76 - Windows interface after generator selection is complete.
+   Figure 76 - Windows interface after generator selection is complete.
 
 NOTE: The "Found" messages for each of the programs will only be displayed on the initial configuration of the system.  To see the variables at a later date, follow the instructions at the bottom of this page.
 
@@ -39,11 +43,14 @@ Looking first at the Windows example with Cache (Figure 77), three variables cor
 
 
 
-.. image:: _static/images/InstallPNGs/cmake77.png
+.. figure:: http://code.osehra.org/content/SHA-1/561b18fff3bb90f51d0568e974aae820d2d3f363-CMakeGUISetVariable.png
+   :align: center
 
-Figure 77 - Setting the VistA variables for Cache and Windows. The pop-up shows setting the VISTA_Path.  The tool-top for this entry reads \"Path to the VistA folder within Cache\".
+   Figure 77 - Setting the VistA variables for Cache and Windows. The pop-up shows setting the VISTA_Path.  The tool-top for this entry reads \"Path to the VistA folder within Cache\".
 
 Once the variables needed for the MUMPS environment are set, press \"Configure\" again to accept the changes into the environment and then press \"Generate\" to complete the process.
+
+The following table has a list of some of the import variables to be set prior to testing and the description of the variable.
 
 
      =====================   ===================================  ==================================
@@ -60,7 +67,10 @@ Once the variables needed for the MUMPS environment are set, press \"Configure\"
                               Cache
      =====================   ===================================  ==================================
 
+After setting the variables and configuring a second time, the red color of the variables that have been set will disappear and any new variables will be highlighted
 
+.. figure:: http://code.osehra.org/content/SHA-1/e280c1ddfcd57f52bb23009a27ed8c1d67b3c935-CMakeGUIWinSecondConfig.png
+   :align: center
 
 OSEHRA_PATH	Path to folder containing OSEHRA Code Base	Path to folder containing OSEHRA Code Base
 INSTANCE	Name of Cache Server	-
@@ -96,17 +106,20 @@ How to find Git and Python information:
 To see the value that is set for GIT_EXECUTABLE or PYTHON_EXECUTABLE after configuration, click on the \"Advanced\" toggle in the CMake GUI (Figure 79A).  This option is used to display other variables that have been configured, but should not require modification to run the testing.  This is where the new search program will place GIT_EXECUTABLE and PYTHON_EXECUTABLE and the proper values.  Example values are shown in Figures 79B and 79C.
 
 
- .. image:: _static/images/InstallPNGs/Advanced1a.png
+.. figure:: http://code.osehra.org/content/SHA-1/7737fdf18ed2a3cdde5ddac5bf28c6a6a167e52f-CMakeAdvancedBox.png
+    :align: center
 
-Figure 79A - CMake GUI with the Advance toggle labeled
+    Figure 79A - CMake GUI with the Advance toggle labeled
 
- .. image:: _static/images/InstallPNGs/Advanced2.png
+.. figure:: http://code.osehra.org/content/SHA-1/2a67ceca8c85e4bdb855c3bcabc8883f7146c564-CMakeGitExecHighlighted.png
+    :align: center
 
-Figure 79B - Advanced variables with GIT_EXECUTABLE highlighted
+    Figure 79B - Advanced variables with GIT_EXECUTABLE highlighted
 
- .. image:: _static/images/InstallPNGs/advanced3.png
+.. figure:: http://code.osehra.org/content/SHA-1/41389cc0413c2338689eeeeab8f046589682cea7-CMakePythonExecHighlighted.png
+    :align: center
 
-Figure 79C - Advanced Variables with PYTHON_EXECUTABLE highlighted
+    Figure 79C - Advanced Variables with PYTHON_EXECUTABLE highlighted
 
 
 
@@ -117,22 +130,25 @@ The most recent commit to the OSEHRA Automated Testing repository introduced the
 
 When running the CMake GUI, the option to use the CPRS Functional Testing is called SIK_SYSTEM_TESTING
 
- .. image:: _static/images/InstallPNGs/install80a.png
+.. figure:: http://code.osehra.org/content/SHA-1/e4d2837b8bb6e2ed25993c02205c81fbdb050796-CMakeSikTestingHighlighted.png
+    :align: center
 
-
-Figure 80A: Showing the new option in the CMake GUI.
+    Figure 80A: Showing the new option in the CMake GUI.
 
 After Pressing configure you can see some new variables come up.  There is a difference when running this VISTA_CPRS_FUNCTIONAL_TESTING on the various supported platforms.  On all platforms, the CPRSPostImport test is created, which asks for a VISTA_SITE_NAME.  This variable defaults to DEMO.OSEHRA.ORG.  On the GT.M systems, this test is accompanied by a warning, voiced during configuration, that tells the user to make a particular code change before running the Functional Testing.  The PostImportSetupScript uses DINIT, which has a known failure of attempting to release a lock that was created before the transaction. (https://groups.google.com/forum/#!topic/hardhats/-cJxbX_Re1c).
 
- .. image:: _static/images/InstallPNGs/install80b.png
+.. figure:: http://code.osehra.org/content/SHA-1/accd2626cd55467cad4632434118106a4b7cf4aa-CMakeVistASiteHightlighted.png
+    :align: center
 
-Figure 80B: Showing the VISTA_SITE_NAME variable and the warning on a GT.M on Linux instance.
+    Figure 80B: Showing the VISTA_SITE_NAME variable and the warning on a GT.M on Linux instance.
+
 On Windows, the warning will not be shown and a second variable will be created which asks for the path to the Sikuli batch file.
 
- .. image:: _static/images/InstallPNGs/install80c.png
+.. figure:: http://code.osehra.org/content/SHA-1/7e675021a8ed7120d408ad52dc2bfba6e7eb584f-CMakeSikuliVistASiteHighlighted.png
+    :align: center
 
+    Figure 80C: Showing the SIKULI_EXECUTABLE and VISTA_SITE_NAME variable on a Cache on Windows instance.
 
-Figure 80C: Showing the SIKULI_EXECUTABLE and VISTA_SITE_NAME variable on a Cache on Windows instance.
 After a round of configuring and generating, the new tests will be created and can be executed like the others.
 
 
@@ -141,12 +157,14 @@ Functional Testing of VistA via the Roll and Scroll Menus
 
 The OSEHRA Automated Testing also has the capability to test the local VistA instance through the Roll and Scroll (RAS) menu interface.
 
- .. image:: _static/images/InstallPNGs/install81a.png
+.. figure:: http://code.osehra.org/content/SHA-1/ecc66b5c36ca40f0974a434b7707da44805601e7-CMakeRasTestingHightlighted.png
+    :align: center
 
-Figure 81A: Showing the RAS_SYSTEM_TESTING option in the CMake GUI.  
+    Figure 81A: Showing the RAS_SYSTEM_TESTING option in the CMake GUI.
 
 There are currently two test suites that utilize the RAS functionality:  Scheduling and Problem List.  Before these tests can be run, there is one more variable to be set named RAS_SYSTEM_TESTING:
 
- .. image:: _static/images/InstallPNGs/install81b.png
+.. figure:: http://code.osehra.org/content/SHA-1/7e8b6926b907ef3b0b5c0ceff80e3a11d3ffc85f-CMakeTestResultsHightlighted.png
+   :align: center
 
 The TEST_RESULTS_DIR is used to set the file location where the log and result files from the tests will be stored.  After configuration, these tests will be added to the queue.

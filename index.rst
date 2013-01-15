@@ -5,7 +5,7 @@
 
 Welcome to the OSEHRA Automated Testing's documentation!
 =========================================================
-.. image:: _static/images/logo.png
+.. figure:: http://code.osehra.org/content/SHA-1/c0286b38b7aabe13fa09e799fe9b96855d157f1e-OSEHRA_LogoText.png
 
 Instructions for Establishing and Testing the OSEHRA Code Base
 ---------------------------------------------------------------
