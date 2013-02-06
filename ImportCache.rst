@@ -17,8 +17,7 @@ To obtain a copy of the repository, create a directory (Folder) to hold the repo
 
   $ :usertype:`git clone git://code.osehra.org/VistA-M.git`
   Cloning into 'VistA-M'...
-  remote: Counting objects: 35615, done.
-  remote: Compressing objects: 100% (30947/30947), done.
+  .
   .
   .
   $

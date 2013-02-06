@@ -17,8 +17,6 @@ Use Git to make a local clone of this repository:
 
   $ :usertype:`git clone http://code.osehra.org/VistA.git`
   Cloning into 'VistA'...
-  remote: Counting objects: 1289, done.
-  remote: Compressing objects: 100% (592/592), done.
   .
   .
   .

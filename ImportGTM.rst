@@ -13,8 +13,7 @@ Starting from an empty instance of GT.M, we need to retrieve the routines and gl
 
   $ :usertype:`git clone git://code.osehra.org/VistA-M.git`
   Cloning into 'VistA-M'...
-  remote: Counting objects: 35615, done.
-  remote: Compressing objects: 100% (30947/30947), done.
+  .
   .
   .
   $ :usertype:`cd VistA-M`
