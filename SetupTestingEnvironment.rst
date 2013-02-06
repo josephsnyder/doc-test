@@ -72,18 +72,11 @@ After setting the variables and configuring a second time, the red color of the 
 .. figure:: http://code.osehra.org/content/SHA-1/e280c1ddfcd57f52bb23009a27ed8c1d67b3c935-CMakeGUIWinSecondConfig.png
    :align: center
 
-OSEHRA_PATH	Path to folder containing OSEHRA Code Base	Path to folder containing OSEHRA Code Base
-INSTANCE	Name of Cache Server	-
-NAMESPACE	Name of Namespace created when installing Cache	-
-Figure 78 - Variable settings for Cache and GT.m
-
-.. image:: _static/images/InstallPNGs/Redone79a.png
-
-Figure 79 - Setting the VistA variables for Intersystems Cache on Windows.
+   Figure 79 - Setting the VistA variables for Intersystems Cache on Windows.
 
 For the Linux example with GT.M (Figure 75), four variables corresponding to EXPECT_EXEC, GTMPROFILE, and VISTA_GLOBALS_DIR, and VISTA_ROUTINES_DIR need to be set or verified according to the values in Figure 78.
 
-There is an option that is not needed to run the testing but may become useful. The CLEAN_DATABASE option will show up during configuration of the OSEHRA Automated Testing.  It uses a series of Python scripts to clean the database of the VistA instance.   This would all be done during the build phase of a nightly dashboard submission. If you choose not to use this option and have followed the above steps, you can continue to running the tests.
+There is an option that is not needed to run the testing but may become useful. The CLEAN_DATABASE option will show up during configuration of the VistA Testing.  It uses a series of Python scripts to clean the database of the VistA instance.   This would all be done during the build phase of a nightly dashboard submission. If you choose not to use this option and have followed the above steps, you can continue to running the tests.
 
 To utilize this option on Cache, the CLEAN_DATABASE checkbox must be checked to tell CMake to configure the correct files. You will also need to create a new cache.dat using the steps from earlier (starting at Figure 15) and set the PRISTINE_CACHE_DAT_PATH to point to the location of that newly created cache.dat.  It will then shut down the Cache instance, copy the empty database in place of the old one, restart Cache, then collect and import the OSEHRA routines and globals.  The Cache CLEAN_DATABASE
 
@@ -126,7 +119,7 @@ To see the value that is set for GIT_EXECUTABLE or PYTHON_EXECUTABLE after confi
 Functional Testing of the CPRS GUI
 ----------------------------------
 
-The most recent commit to the OSEHRA Automated Testing repository introduced the ability to use an open-source tool called Sikuli to test the CPRS and Vitals Manager interface.  Sikuli is a cross-platform GUI testing system which uses OpenCV and Jython, a combination of Java and Python, to match a script of supplied screenshots and act upon them.  Due to the limitations of CPRS, this tool will only be utilzed on Windows environments, but it will work on any platform.  The Functional Testing consists of two parts: The PostImportSetupScript and the Sikuli folder.  The PostImportSetupScript is a python file, designed to be run right after import from the OSEHRA repository,which connects to the VistA system and sets up an institution for testing.  This includes setting up a demonstration domain, setting the correct box:volume pairs, and adding other laboratory tests and data.  The script will also add a sample patient, doctor and nurse, with their necessary security keys.  After the PostImportSetupScript is run, the Sikuli test starts and will look to click on icons on the user's desktop to start both programs.  The scripts also cause VistA to expect to interact with certain versions of each of the software.  Those versions are available for download from here.  The instructions for setting up the short cuts are on the download site.
+The most recent commit to the VistA repository introduced the ability to use an open-source tool called Sikuli to test the CPRS and Vitals Manager interface.  Sikuli is a cross-platform GUI testing system which uses OpenCV and Jython, a combination of Java and Python, to match a script of supplied screenshots and act upon them.  Due to the limitations of CPRS, this tool will only be utilzed on Windows environments, but it will work on any platform.  The Functional Testing consists of two parts: The PostImportSetupScript and the Sikuli folder.  The PostImportSetupScript is a python file, designed to be run right after import from the OSEHRA repository,which connects to the VistA system and sets up an institution for testing.  This includes setting up a demonstration domain, setting the correct box:volume pairs, and adding other laboratory tests and data.  The script will also add a sample patient, doctor and nurse, with their necessary security keys.  After the PostImportSetupScript is run, the Sikuli test starts and will look to click on icons on the user's desktop to start both programs.  The scripts also cause VistA to expect to interact with certain versions of each of the software.  Those versions are available for download from here.  The instructions for setting up the short cuts are on the download site.
 
 When running the CMake GUI, the option to use the CPRS Functional Testing is called SIK_SYSTEM_TESTING
 
@@ -155,7 +148,7 @@ After a round of configuring and generating, the new tests will be created and c
 Functional Testing of VistA via the Roll and Scroll Menus
 ``````````````````````````````````````````````````````````
 
-The OSEHRA Automated Testing also has the capability to test the local VistA instance through the Roll and Scroll (RAS) menu interface.
+The VistA repository also has the capability to test the local VistA instance through the Roll and Scroll (RAS) menu interface.
 
 .. figure:: http://code.osehra.org/content/SHA-1/ecc66b5c36ca40f0974a434b7707da44805601e7-CMakeRasTestingHightlighted.png
     :align: center

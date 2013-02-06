@@ -51,7 +51,7 @@ To display the tests that are currently available without actually performing th
 .. parsed-literal::
 
   $ :usertype:`ctest -N`
-  Test project C:/Users/joe.snyder/Work/OSEHRA/OSEHRA-Automated-Testing-build
+  Test project C:/Users/joe.snyder/Work/OSEHRA/VistA-build
     Test   #1: XINDEX_Accounts_Receivable
     Test   #2: XINDEX_Adverse_Reaction_Tracking
     Test   #3: XINDEX_Asists
@@ -94,7 +94,7 @@ Entering the command \"ctest \- <string>\" (Figure 82) allows you to specify a t
 .. parsed-literal::
 
   $ :usertype:`ctest -R NDBI`
-  Test project C:/Users/joe.snyder/Work/OSEHRA/OSEHRA-Automated-Testing-build
+  Test project C:/Users/joe.snyder/Work/OSEHRA/VistA-build
       Start 76: XINDEX_NDBI
   1/1 Test #76: XINDEX_NDBI ......................***Failed    2.69 sec
 
@@ -127,7 +127,7 @@ CTest options can be combined and Figure 83 shows an example of combining the \"
       . Size of output: 0K
      0 Compiler errors
      0 Compiler warnings
-  Test project C:/Users/joe.snyder/Work/OSEHRA/OSEHRA-Automated-Testing-build
+  Test project C:/Users/joe.snyder/Work/OSEHRA/VistA-build
       Start 76: XINDEX_NDBI
   1/1 Test #76: XINDEX_NDBI ......................***Failed    2.69 sec
 
@@ -142,11 +142,11 @@ CTest options can be combined and Figure 83 shows an example of combining the \"
   Submit files (using http)
      Using HTTP submit method
      Drop site:http://code.osehra.org/CDash/submit.php?project=Open+Source+EHR
-     Uploaded: C:/Users/joe.snyder/Work/OSEHRA/OSEHRA-Automated-Testing-build/Test
+     Uploaded: C:/Users/joe.snyder/Work/OSEHRA/VistA-build/Test
   ing/20121217-2217/Build.xml
-     Uploaded: C:/Users/joe.snyder/Work/OSEHRA/OSEHRA-Automated-Testing-build/Test
+     Uploaded: C:/Users/joe.snyder/Work/OSEHRA/VistA-build/Test
   ing/20121217-2217/Configure.xml
-     Uploaded: C:/Users/joe.snyder/Work/OSEHRA/OSEHRA-Automated-Testing-build/Test
+     Uploaded: C:/Users/joe.snyder/Work/OSEHRA/VistA-build/Test
   ing/20121217-2217/Test.xml
      Submission successful
   Errors while running CTest

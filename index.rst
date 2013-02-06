@@ -1,9 +1,9 @@
-.. OSEHRA Automated Testing documentation master file, created by
+.. VistA documentation master file, created by
    sphinx-quickstart on Mon Dec 17 16:27:57 2012.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to the OSEHRA Automated Testing's documentation!
+Welcome to the VistA documentation!
 =========================================================
 .. figure:: http://code.osehra.org/content/SHA-1/c0286b38b7aabe13fa09e799fe9b96855d157f1e-OSEHRA_LogoText.png
 
@@ -38,7 +38,7 @@ GT.M:
   InstallGTM
   ImportGTM
   
-The last sections are common to both types of systems and are specific to the OSEHRA-Automated-Testing Framework:
+The last sections are common to both types of systems:
 
 .. toctree::
   :maxdepth: 2
