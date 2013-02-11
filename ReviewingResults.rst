@@ -9,7 +9,7 @@ Viewing the Results
 
 Executing  \"ctest  \- Experimental\" or \"ctest \- Nightly,\" for example,  will upload the test results to the OSEHRA Software Quality Dashboard (http://code.osehra.org/CDash/index.php?project=Open+Source+EHR) as shown in Figure 84. Note that the entries are organized by sections for different test types, Nightly or Experimental. The site name is the name of the machine running the tests, and build name is the operating system.
 
-.. figure:: http://code.osehra.org/content/SHA-1/2c29c6414d4e8b87d863d79f71f18a4920850adf-Dashboard.png
+.. figure:: http://code.osehra.org/content/named/SHA1/2c29c641-Dashboard.png
    :align: center
 
    Figure 84 - OSEHRA Software Quality Dashboard

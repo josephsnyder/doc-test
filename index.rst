@@ -5,7 +5,7 @@
 
 Welcome to the VistA documentation!
 =========================================================
-.. figure:: http://code.osehra.org/content/SHA-1/c0286b38b7aabe13fa09e799fe9b96855d157f1e-OSEHRA_LogoText.png
+.. figure:: http://code.osehra.org/content/named/SHA1/c0286b38-OSEHRA_LogoText.png
 
 Instructions for Establishing and Testing the OSEHRA Code Base
 ---------------------------------------------------------------
