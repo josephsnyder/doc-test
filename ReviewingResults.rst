@@ -12,8 +12,22 @@ Executing  \"ctest  \- Experimental\" or \"ctest \- Nightly,\" for example,  wil
 .. figure:: http://code.osehra.org/content/named/SHA1/2c29c641-Dashboard.png
    :align: center
 
-   Figure 84 - OSEHRA Software Quality Dashboard
+   Figure - OSEHRA Software Quality Dashboard
 
+The coverage results are found at the bottommost section of the dashboard page.
+
+.. figure:: http://code.osehra.org/content/named/SHA1/6025479c-DashboardCoverageHighLight.png
+   :align: center
+
+   Figure - OSEHRA Software Quality Dashboard with the Coverage section highlighted
+
+Clicking on the percentage will open a new page with detailed information on the individual files
+sorted by percentage of the lines of the files used and a line-by-line display of what code was executed.  
+
+.. figure:: http://code.osehra.org/content/named/SHA1/71cbd0bf-ExampleDashboardCoverage.png
+   :align: center
+
+   Figure - Example coverage report using the SDCO21.m routine
 More detailed information about the Dashboard's capabilities and displays can be found here_.
 
 .. _here: http://public.kitware.com/Wiki/CDash:Documentation

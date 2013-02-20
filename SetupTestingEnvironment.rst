@@ -160,4 +160,20 @@ There are currently two test suites that utilize the RAS functionality:  Schedul
 .. figure:: http://code.osehra.org/content/named/SHA1/7e8b6926-CMakeTestResultsHightlighted.png
    :align: center
 
-The TEST_RESULTS_DIR is used to set the file location where the log and result files from the tests will be stored.  After configuration, these tests will be added to the queue.
+Calculating the coverage of the test harness
+````````````````````````````````````````````
+
+The testing harness also has the ability to track the coverage of the tests that are being run.  This coverage capability is available on most tests, only the Sikuli test
+cannot have the coverage tracked.  It is enabled with the CMake variable "USE_COVERAGE" and will print out at least one warning during the configuration steps where it is enabled.
+
+.. figure:: http://code.osehra.org/content/named/SHA1/91b950bd-cmakeCoverageHighlight.png
+   :align: center
+
+There is a warning that will show up on all plaforms about the tests taking longer and creating additional files.  There is an extra Cache-specific warning about the gmHeap value,
+along with the instructions to test if you have a correct value set for the gmHeap.  GT.M users will only see the first warning.
+
+.. figure:: http://code.osehra.org/content/named/SHA1/963507cf-cmakeCoverageWarning.png
+   :align: center
+
+This option will create files in the binary directory with the extension of .mcov (GT.M M Coverage) or .cmcov (Cache M coverage).  These files will be parsed by CTest during a dashboard submission
+and the resulting coverage calculation will be displayed on the dashboard after submission.
