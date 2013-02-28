@@ -12,7 +12,7 @@ Instructions for Establishing and Testing the OSEHRA Code Base
 
 These pages describe the steps required to obtain the OSEHRA open source VistA codebase from the OSEHRA code repository, establish a working test environment, execute the tests, and view the results on the OSEHRA Software Quality Dashboard.
 
-The instructions comprise six sections corresponding to:
+The instructions comprise of the following sections:
 
 .. toctree::
   :maxdepth: 2
