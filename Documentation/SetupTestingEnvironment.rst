@@ -9,16 +9,16 @@ Set up the Testing Environment
 
 To configure the environment for testing, start the cmake-gui.exe. Once it has started (Figure 73), set the two paths at the top of the window so that the source code points to the Testing Source Directory from step 1 above. This directory will point to a directory (folder) containing CMakeLists.txt file. The Binaries path can go to a folder of your choice, but note that whatever directory is provided will be the Testing Binary Directory, and after configuration, it will contain CMake files defining the tests to be run.
 
-Once those are set, click the Configure button. The interface will then ask you to specify a generator (Figure 74). These are normally used to check for working C and C++ compilers. For VistA testing, the generator does nothing and it therefore not used. This selection can be chosen arbitrarily to any displayed generator so we recommend selecting the default value. Click finish after the selection is made to continue the configuration process.
+Once those are set, click the Configure button. The interface will then ask you to specify a generator (Figure 74). These are normally used to check for working C and C++ compilers. For VistA testing, the generator does nothing and it therefore not used. We recommend using the Borland Makefile if on a Windows environment and the Unix Makefiles in a Linux system. Click finish after the selection is made to continue the configuration process.
 
 
-.. figure:: http://code.osehra.org/content/named/SHA1/e7e145f2-CMakeGUIHighlights.png
+.. figure:: http://code.osehra.org/content/named/SHA1/40eae47a-cmakeGUIHighlights.png
    :align: center
 
    Figure 73 - Initial cmake-gui page.
 
 
-.. figure:: http://code.osehra.org/content/named/SHA1/6f19f446-CMakeGUIGeneratorSelection.png
+.. figure:: http://code.osehra.org/content/named/SHA1/24c3b506-cmakeGUIWinGeneratorSelection.png
    :align: center
 
    Figure 74 - Generator selection.
@@ -26,154 +26,270 @@ Once those are set, click the Configure button. The interface will then ask you 
 Following generator selection, the interface will produce a highlighted display such as in Figure 75 for Linux and Figure 76 for Windows. The entries in the window are the variables which can be set to control the testing process. Most of the values should be set correctly by the automated configuration process, but the scripting environment and the location of the VistA source code may need to be set appropriately. To aid in the configuring, most variables have a mouse-over tip which explains in greater detail what the variable should contain.
 
 
-.. figure:: http://code.osehra.org/content/named/SHA1/26d73c05-CMakeGUILinuxPostConfig.png
+.. figure:: http://code.osehra.org/content/named/SHA1/7433a9bf-cmakeGUILinuxPostConfig.png
    :align: center
 
    Figure 75 - Linux interface after generator selection is complete.
 
 
-.. figure:: http://code.osehra.org/content/named/SHA1/c58f3fa3-CMakeGUIWinPostConfig.png
+.. figure:: http://code.osehra.org/content/named/SHA1/f943a02c-cmakeGUIWinPostConfig.png
    :align: center
 
    Figure 76 - Windows interface after generator selection is complete.
 
 NOTE: The "Found" messages for each of the programs will only be displayed on the initial configuration of the system.  To see the variables at a later date, follow the instructions at the bottom of this page.
 
-Looking first at the Windows example with Cache (Figure 77), three variables corresponding to  CTerm, CControl, and VISTA_Path need to be set or verified according to the values in Figure 78.
+The variables found after the first configure are very straight forward.
+
+     =====================   ======================================  ======================================
+      Variable Name               Value for Testing in Cache              Value for Testing in GT.M
+     =====================   ======================================  ======================================
+       BUILD_DELPHI            \"On\" to build CPRS from Source       \"On\" to build CPRS from Source  
+       BUILD_TESTING                            ON                                   ON
+       TEST_VISTA             \"On\" to use OSEHRA Testing Harness   \"On\" to use OSEHRA Testing Harness
+     =====================   ======================================  ======================================
+
+Once the options are chosen are set, press \"Configure\" again and a new set of variables will be shown in the window.
+
+TEST_VISTA Variables
+====================
 
 
+Selecting the TEST_VISTA option and re-configuring will present a screen like below:
 
-.. figure:: http://code.osehra.org/content/named/SHA1/561b18ff-CMakeGUISetVariable.png
+
+.. figure:: http://code.osehra.org/content/named/SHA1/2e0050ac-cmakeGUITestVistAConfig.png
    :align: center
 
-   Figure 77 - Setting the VistA variables for Cache and Windows. The pop-up shows setting the VISTA_Path.  The tool-top for this entry reads \"Path to the VistA folder within Cache\".
-
-Once the variables needed for the MUMPS environment are set, press \"Configure\" again to accept the changes into the environment and then press \"Generate\" to complete the process.
-
-The following table has a list of some of the import variables to be set prior to testing and the description of the variable.
+   Figure 77 - After turning the TEST_VISTA option on, and reconfiguring
 
 
-     =====================   ===================================  ==================================
-      Variable Name           Value for Testing in Cache          Value for Testing in GT.M
-     =====================   ===================================  ==================================
-        CControl              Path to CControl Executable                        N/A
-        CTerm                 Path to CTerm Executable                           N/A
-        GTMPROFILE                        N/A                         Path to gtmprofile file
-        VISTA_GLOBALS_DIR                 N/A                         Path to folder with database.dat
-        VISTA_ROUTINES_DIR                N/A                         Path to folder with VistA Routines
-        OSEHRA_PATH           Path to folder of OSEHRA Code base   Path to folder of OSEHRA Code base
-        INSTANCE              Name of Cache Server                               N/A
-        NAMESPACE             Namespace created when installing                  N/A
-                              Cache
-     =====================   ===================================  ==================================
+The following table has a list of some of the important variables to be set prior to testing and the description of the variable.  These variables are either used to determine what VistA system is currently installed or are common to both systems.  
 
-After setting the variables and configuring a second time, the red color of the variables that have been set will disappear and any new variables will be highlighted
 
-.. figure:: http://code.osehra.org/content/named/SHA1/e280c1dd-CMakeGUIWinSecondConfig.png
+     ========================   ===================================  ==================================
+         Variable Name              Value for Testing in Cache            Value for Testing in GT.M
+     ========================   ===================================  ==================================
+      GIT_EXECUTABLE              Path to Git Executable                Path to Git Executable
+      PYTHON_EXECUTABLE           Path to Python Executable             Path to Python Executable
+      CCONTROL_EXECUTABLE         Path to CControl Executable                      N/A
+      CTERM_EXECUTABLE            Path to CTerm Executable                         N/A
+      VISTA_CACHE_NAMESPACE       Namespace of VistA routines                      N/A
+      VISTA_CACHE_INSTANCE        Cache Instance Name                              N/A
+      VISTA_CACHE_USERNAME        Login Username for Cache                         N/A
+                                  (if necessary)
+      VISTA_CACHE_PASSWORD        Login Password for Cache                         N/A
+                                  (if neccesary)
+      GTM_DIST                             N/A                        Path to GTM distribution Dir
+     ========================   ===================================  ==================================
+
+One thing to note, is that the VISTA_CACHE_PASSWORD is stored and used in plain-text form
+
+To see the value that is set for GIT_EXECUTABLE or PYTHON_EXECUTABLE after configuration, click on the \"Advanced\" toggle in the CMake GUI. 
+
+
+.. figure:: http://code.osehra.org/content/named/SHA1/99c54e3d-cmakeGUIAdvancedHighlight.png
+    :align: center
+
+    Figure 78 - CMake GUI with the Advance toggle labeled
+
+This toggle is used to display other variables that have been configured, but should not require modification to run the testing.  This is where CMake will place
+the GIT_EXECUTABLE and PYTHON_EXECUTABLE variables and their found values.  Example values are shown below:
+
+.. figure:: http://code.osehra.org/content/named/SHA1/4e86850b-cmakeGUIAdvancedGitHighlight.png
+    :align: center
+
+    Figure - Advanced variables with GIT_EXECUTABLE highlighted
+
+.. figure:: http://code.osehra.org/content/named/SHA1/7617227f-cmakeGUIAdvancedPythonHighlight.png
+    :align: center
+
+    Figure - Advanced Variables with PYTHON_EXECUTABLE highlighted
+
+
+There are a large amount of options that are shown after the first configuration, this document will walk through the options, explain what each will do, and show variables that will appear
+after selecting the options.
+
+XINDEX Testing
+``````````````
+
+Running XINDEX on the routines in the VistA instance is the default testing in the OSEHRA Harness.  It does not have an explicit option but does have a few variables that influence
+the testing procedure.
+
+.. figure:: http://code.osehra.org/content/named/SHA1/27b575fd-cmakeGUIXINDEXHighlights.png
    :align: center
 
-   Figure 79 - Setting the VistA variables for Intersystems Cache on Windows.
+   Figure 78 - Highlighted variables that change the XINDEX testing.
 
-For the Linux example with GT.M (Figure 75), four variables corresponding to EXPECT_EXEC, GTMPROFILE, and VISTA_GLOBALS_DIR, and VISTA_ROUTINES_DIR need to be set or verified according to the values in Figure 78.
+The TEST_VISTA_FRESH_M_DIR is the path to the directory with OSEHRA M repository checkout.  This repository is parsed to determine the Packages and routines to test.
+The TEST_VISTA_XINDEX_WARNINGS_AS_FAILURES is an option which changes the failure condition of the XINDEX tests.  With this option off, the test will fail if the XINDEX report
+returns a fatal error, "F -" in the output.  This option will cause a warning in the output "W -" as a failure condition.  The GREP_EXECUTABLE is used to find and print
+the line position of a returned error or warning in the source file during the reporting of the error. It can be found among the advanced variables like PYTHON_EXECTUABLE.
+The these variables are set in the following manner:
 
-There is an option that is not needed to run the testing but may become useful. The CLEAN_DATABASE option will show up during configuration of the VistA Testing.  It uses a series of Python scripts to clean the database of the VistA instance.   This would all be done during the build phase of a nightly dashboard submission. If you choose not to use this option and have followed the above steps, you can continue to running the tests.
+     =======================================   ===================================  ======================================
+      Variable Name                                 Value for Testing in Cache          Value for Testing in GT.M
+     =======================================   ===================================  ======================================
+     TEST_VISTA_FRESH_M_DIR                      Path to OSEHRA M repository           Path to OSEHRA M repository
+     TEST_VISTA_XINDEX_WARNINGS_AS_FAILURES               ON/OFF                                  ON/OFF
+     TEST_VISTA_OUTPUT_DIR                       Path to folder where log files        Path to folder where log files
+                                                 will be stored                        will be stored
+     GREP_EXECUTABLE                             Path to Grep Executable               Path to GREP Executable
+     =======================================   ===================================  ======================================
 
-To utilize this option on Cache, the CLEAN_DATABASE checkbox must be checked to tell CMake to configure the correct files. You will also need to create a new cache.dat using the steps from earlier (starting at Figure 15) and set the PRISTINE_CACHE_DAT_PATH to point to the location of that newly created cache.dat.  It will then shut down the Cache instance, copy the empty database in place of the old one, restart Cache, then collect and import the OSEHRA routines and globals.  The Cache CLEAN_DATABASE
 
-On GT.M, the CMake side is more simple.  Only the CLEAN_DATABASE option needs to be set during configuration. The scripts will , at build time, proceede to delete the database.dat and the 'r' folder where the routines are stored.  Then, create a new database.dat and 'r' folder and import the routines and globals from the OSEHRA Code Base.
+
+TEST_VISTA_COVERAGE
+```````````````````
+
+**This capability is only available on systems that have a CMake version that is 2.8.9 or higher.  This option will not show up with earlier versions of CMake.**
+
+The TEST_VISTA_COVERAGE option is used to enable a coverage calculation using the OSEHRA tests.  It keeps track of the lines of code that are executed during the tests and writes files
+that can be parsed by the testing sofware and displayed on the dashboard after submission.  The coverage is available for three types of OSEHRA Testing: XINDEX, MUnit, and the
+Roll-and-Scroll (RAS) tests.  
+
+
+.. figure:: http://code.osehra.org/content/named/SHA1/50006d42-cmakeGUICoverageHighlight.png
+   :align: center
+
+   Figure 79 - Highlighting the TEST_VISTA_COVERAGE option.
+
+While there are no more variables to set after selecting the TEST_VISTA_COVERAGE option, it does display warnings during the configuration.  These messages warn that the tests will take longer
+and will create other files in addition to the standard log files.  There is a warning that is specific to Cache environments, it warns that an Advanced Memory variable may need to be changed
+have the monitor be used.  It give the variable to change and how to test it.  The GT.M users will only see the timing warning.
+
+.. figure:: http://code.osehra.org/content/named/SHA1/f12fcd48-cmakeGUICoverageWarnings.png
+   :align: center
+
+   Figure 80 - After selecting the TEST_VISTA_COVERAGE options, warnings are displayed in the output with the Cache specific warning.
+
+This option will create files in the binary directory with the extension of .mcov (GT.M M Coverage) or .cmcov (Cache M coverage).
+
+
+
+
+TEST_VISTA_FRESH and TEST_VISTA_SETUP
+``````````````````````````````````````
+
+There is an option that is not needed to run the testing but may become useful. The TEST_VISTA_FRESH option will show up during configuration of the VistA Testing.  It uses a series of
+Python scripts to clean the database of the VistA instance.   This would all be done during the build phase of a nightly dashboard submission.
+
+This combination can also configure the VistA instance and set up a fictional environment within VistA with fake patients, doctors and nurses, and a simple clinic.
+This information is required to be there for the functional tests to complete successfully. 
+
+.. figure:: http://code.osehra.org/content/named/SHA1/819c659c-cmakeGUIFreshHighlight.png
+   :align: center
+
+   Figure 80 - The CMake-GUI with the TEST_VISTA_FRESH option highlighted.
+
+
+To utilize this option on Cache, the TEST_VISTA_FRESH checkbox must be checked to tell CMake to configure the correct files. You will also need to create a new cache.dat using the steps
+from earlier (starting at Figure 15) and set the TEST_VISTA_FRESH_CACHE_DAT_EMPTY to point to the location of that newly created cache.dat.  It will then shut down the Cache instance,
+copy the empty database in place of the old one, restart Cache, then collect and import the OSEHRA routines and globals. 
+
+
+.. figure:: http://code.osehra.org/content/named/SHA1/74a64c8c-cmakeGUIFreshConfigure.png
+   :align: center
+
+   Figure - The CMake-GUI on Windows/Cache after configuration.
+
+For GT.M, the overall process is the same, but has some internal actions that make it GT.M specific.  Instead of a the Cache variables, we ask for the TEST_VISTA_FRESH_GTM_GLOBALS_DAT and
+the TEST_VISTA_FRESH_GTM_ROUTINE_DIR.  The TEST_VISTA_FRESH_GTM_GLOBALS_DAT is the path to the database.dat that contains the VistA globals.  This file will be deleted and recreated
+automatically via the 'MUPIP' command.  The  TEST_VISTA_FRESH_GTM_ROUTINE_DIR is the path to the folder that contains the VistA routines.  This folder will be removed and recreated so that all routines within the GT.M instance will be from the latest import.  The other GT.M specific variable is the TEST_VISTA_SETUP_UCI_NAME which is used during the configuring of the VistA instance.  
+
+.. figure:: http://code.osehra.org/content/named/SHA1/93943892-cmakeGUIFreshLinuxConfigure.png
+   :align: center
+
+   Figure - The CMake-GUI on Linux/GTM after configuration.
+
 
 If you plan to use these options, there are more variables that need to be set:
 
-     ========================   ===================================  ==================================
-         Variable Name           Value for Testing in Cache          Value for Testing in GT.M
-     ========================   ===================================  ==================================
-      CLEAN_DATABASE                     	ON                                     	ON
-      PRISTENE_CACHE_DAT_PATH   Path to folder containing an empty                 N/A
-                                cache.dat
-      PYTHON_EXECUTABLE         Path to Python Executable             	Path to Python Executable
-      GIT_EXECUTABLE            Path to Git Executable	                Path to Git Executable
+     ========================================   ==========================================   =======================================
+         Variable Name                             Value for Testing in Cache                    Value for Testing in GT.M
+     ========================================   ==========================================   =======================================
+      TEST_VISTA_SETUP_PRIMARY_HFS_DIRECTORY       Path to temporary directory                 Path to temporary directory
+                                                   (@ will use process directory)              (@ will use process directory)
+      TEST_VISTA_SETUP_SITE_NAME                   Name for VistA site                         Name for VistA site
+      TEST_VISTA_SETUP_VOLUME_SET                  Volume set of Instance                      Volume set of VistA instance
+      TEST_VISTA_GLOBAL_IMPORT_TIMEOUT             Length of Timeout for Global Import         Length of Timeout for Global Import 
+      TEST_VISTA_FRESH                                         ON                                        ON
+      TEST_VISTA_FRESH_CACHE_DAT_EMPTY             Path to an empty CACHE.dat                            N/A
+      TEST_VISTA_FRESH_CACHE_DIR_VISTA           Path to folder containing VistA Cache.dat               N/A
+      TEST_VISTA_FRESH_GTM_GLOBALS_DAT                          N/A                           Path to the database.dat with VistA
+      TEST_VISTA_FRESH_GTM_ROUTINE_DIR                          N/A                           Path to folder that contains VistA 
+                                                                                              routines
+      TEST_VISTA_SETUP_UCI_NAME                                 N/A                           UCI name of VistA isntance
+     ========================================   ==========================================   =======================================
 
-     ========================   ===================================  ==================================
 
-How to find Git and Python information:
-To see the value that is set for GIT_EXECUTABLE or PYTHON_EXECUTABLE after configuration, click on the \"Advanced\" toggle in the CMake GUI (Figure 79A).  This option is used to display other variables that have been configured, but should not require modification to run the testing.  This is where the new search program will place GIT_EXECUTABLE and PYTHON_EXECUTABLE and the proper values.  Example values are shown in Figures 79B and 79C.
+TEST_VISTA_FUNCTIONAL_SIK
+--------------------------
 
+The OSEHRA Testing harness also the ability to use an open-source tool called Sikuli to test the CPRS and Vitals Manager interface.  Sikuli is a cross-platform GUI testing system which uses
+OpenCV and Jython, a combination of Java and Python, to match a script of supplied screenshots and act upon them.  Due to the limitations of CPRS, this tool will only be utilzed on Windows
+environments.  If the 
+the Sikuli test starts and will look to click on icon s on the user's desktop to start both programs.  The scripts also cause VistA to expect to interact with certain versions of each of
+the software.  Those versions are available for download from the `OSEHRA website`_.  The instructions for setting up the short cuts are also on that website.
 
-.. figure:: http://code.osehra.org/content/named/SHA1/7737fdf1-CMakeAdvancedBox.png
+When running the CMake GUI, the option to use the CPRS Functional Testing is called TEST_VISTA_FUNCTIONAL_SIK
+
+.. figure:: http://code.osehra.org/content/named/SHA1/eda76241-cmakeGUIFunctionalSIK.png
     :align: center
 
-    Figure 79A - CMake GUI with the Advance toggle labeled
+    Figure 80A: Showing the TEST_VISTA_FUNCTIONAL_SIK option in the CMake-GUI
 
-.. figure:: http://code.osehra.org/content/named/SHA1/2a67ceca-CMakeGitExecHighlighted.png
+After Pressing configure you can see some new variables come up on Windows. Since the CPRS executable can only be run within a Windows environment, this option will do nothing on a Linux/GTM
+or Linux/Cache environment.
+
+.. figure:: http://code.osehra.org/content/named/SHA1/231d5fdd-cmakeGUIFunctionalSIKConfigure.png
     :align: center
 
-    Figure 79B - Advanced variables with GIT_EXECUTABLE highlighted
-
-.. figure:: http://code.osehra.org/content/named/SHA1/41389cc0-CMakePythonExecHighlighted.png
-    :align: center
-
-    Figure 79C - Advanced Variables with PYTHON_EXECUTABLE highlighted
+    Figure 80B: Showing the variables needed for the TEST_VISTA_FUNCTIONAL_SIK.
 
 
+Those variables ask for path to the two GUIs that were either downloaded from the above line or already on the system.  
 
-Functional Testing of the CPRS GUI
-----------------------------------
-
-The most recent commit to the VistA repository introduced the ability to use an open-source tool called Sikuli to test the CPRS and Vitals Manager interface.  Sikuli is a cross-platform GUI testing system which uses OpenCV and Jython, a combination of Java and Python, to match a script of supplied screenshots and act upon them.  Due to the limitations of CPRS, this tool will only be utilzed on Windows environments, but it will work on any platform.  The Functional Testing consists of two parts: The PostImportSetupScript and the Sikuli folder.  The PostImportSetupScript is a python file, designed to be run right after import from the OSEHRA repository,which connects to the VistA system and sets up an institution for testing.  This includes setting up a demonstration domain, setting the correct box:volume pairs, and adding other laboratory tests and data.  The script will also add a sample patient, doctor and nurse, with their necessary security keys.  After the PostImportSetupScript is run, the Sikuli test starts and will look to click on icons on the user's desktop to start both programs.  The scripts also cause VistA to expect to interact with certain versions of each of the software.  Those versions are available for download from here.  The instructions for setting up the short cuts are on the download site.
-
-When running the CMake GUI, the option to use the CPRS Functional Testing is called SIK_SYSTEM_TESTING
-
-.. figure:: http://code.osehra.org/content/named/SHA1/e4d2837b-CMakeSikTestingHighlighted.png
-    :align: center
-
-    Figure 80A: Showing the new option in the CMake GUI.
-
-After Pressing configure you can see some new variables come up.  There is a difference when running this VISTA_CPRS_FUNCTIONAL_TESTING on the various supported platforms.  On all platforms, the CPRSPostImport test is created, which asks for a VISTA_SITE_NAME.  This variable defaults to DEMO.OSEHRA.ORG.  On the GT.M systems, this test is accompanied by a warning, voiced during configuration, that tells the user to make a particular code change before running the Functional Testing.  The PostImportSetupScript uses DINIT, which has a known failure of attempting to release a lock that was created before the transaction. (https://groups.google.com/forum/#!topic/hardhats/-cJxbX_Re1c).
-
-.. figure:: http://code.osehra.org/content/named/SHA1/accd2626-CMakeVistASiteHightlighted.png
-    :align: center
-
-    Figure 80B: Showing the VISTA_SITE_NAME variable and the warning on a GT.M on Linux instance.
-
-On Windows, the warning will not be shown and a second variable will be created which asks for the path to the Sikuli batch file.
-
-.. figure:: http://code.osehra.org/content/named/SHA1/7e675021-CMakeSikuliVistASiteHighlighted.png
-    :align: center
-
-    Figure 80C: Showing the SIKULI_EXECUTABLE and VISTA_SITE_NAME variable on a Cache on Windows instance.
-
-After a round of configuring and generating, the new tests will be created and can be executed like the others.
+     =======================================   ========================================
+      Variable Name                              Value for Testing in Windows/Cache
+     =======================================   ========================================
+      CPRS_EXECUTABLE                           Path to the CPRSChart.exe
+      VITALS_MANAGER_EXECUTABLE                 Path to the VitalsManager.exe
+     =======================================   ======================================== 
 
 
-Functional Testing of VistA via the Roll and Scroll Menus
-``````````````````````````````````````````````````````````
+TEST_VISTA_FUNCTIONAL_RAS
+`````````````````````````
 
 The VistA repository also has the capability to test the local VistA instance through the Roll and Scroll (RAS) menu interface.
 
-.. figure:: http://code.osehra.org/content/named/SHA1/ecc66b5c-CMakeRasTestingHightlighted.png
+.. figure:: http://code.osehra.org/content/named/SHA1/76b362b2-cmakeGUIFunctionalRAS.png
     :align: center
 
-    Figure 81A: Showing the RAS_SYSTEM_TESTING option in the CMake GUI.
+    Figure 81A: Showing the TEST_VISTA_FUNCTIONAL_RAS option in the CMake GUI.
 
-There are currently two test suites that utilize the RAS functionality:  Scheduling and Problem List.  Before these tests can be run, there is one more variable to be set named RAS_SYSTEM_TESTING:
+There are currently two test suites that utilize the RAS functionality:  Scheduling and Problem List.  This option does not require any other
+variables to be set.
 
-.. figure:: http://code.osehra.org/content/named/SHA1/7e8b6926-CMakeTestResultsHightlighted.png
-   :align: center
 
-Calculating the coverage of the test harness
-````````````````````````````````````````````
+EXAMPLE TESTING SETUP
+=====================
 
-The testing harness also has the ability to track the coverage of the tests that are being run.  This coverage capability is available on most tests, only the Sikuli test
-cannot have the coverage tracked.  It is enabled with the CMake variable "USE_COVERAGE" and will print out at least one warning during the configuration steps where it is enabled.
+After some number of rounds of configuration, no new variables will appear after a configuration step.  Once this happens, the \"Generate\" button can be pressed,
+and the tests will be generated.  
 
-.. figure:: http://code.osehra.org/content/named/SHA1/91b950bd-cmakeCoverageHighlight.png
-   :align: center
+The following figure is an example of a fully configured testing environment, ready for the \"Generate\" step.
 
-There is a warning that will show up on all plaforms about the tests taking longer and creating additional files.  There is an extra Cache-specific warning about the gmHeap value,
-along with the instructions to test if you have a correct value set for the gmHeap.  GT.M users will only see the first warning.
+.. figure:: http://code.osehra.org/content/named/SHA1/34aa3d6d-cmakeGUIFullEnvironment.png
+    :align: center
 
-.. figure:: http://code.osehra.org/content/named/SHA1/963507cf-cmakeCoverageWarning.png
-   :align: center
+    Figure 81A: A fully configured instance of the OSEHRA harness.
 
-This option will create files in the binary directory with the extension of .mcov (GT.M M Coverage) or .cmcov (Cache M coverage).  These files will be parsed by CTest during a dashboard submission
-and the resulting coverage calculation will be displayed on the dashboard after submission.
+The \"Generate\" will only add a single line to the output window saying
+
+.. parsed-literal::
+    
+   Generating done.
+
+This lets you know that the tests are ready to be run from the command line.
+
