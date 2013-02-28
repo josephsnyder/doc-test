@@ -63,7 +63,7 @@ When the \"GTM>\" prompt is there, you are in the GT.M environment and can execu
   Formfeed delimited <No>?
 
 
-The routines.ro file that was created earlier is not formfeed delimited, so the default option for the first prompt is the correct one to choose. When the prompt asks for an \"Input Device,\" enter the path to the routines.ro that was created in the earlier step. Our path to the routines.ro is shown entered into Figure 66.
+The routines.ro file that was created earlier is not formfeed delimited, so the default option for the first prompt is the correct one to choose. When the prompt asks for an \"Input Device,\" enter the path to the routines.ro that was created in the earlier step. Our path to the routines.ro is shown entered below.
 
 
 .. parsed-literal::
@@ -120,7 +120,8 @@ Configure the VistA Environment
 ---------------------------------
 Some configuration within the VistA environment is necessary before you have a full VistA instance.
 
-Figure 70 shows the routine that need to be run to configure the VistA instance. The ZTMGRSET routine will configure the VistA instance by renaming some system-specific routines. This is done using the command:
+The text below shows the routine that need to be run to configure the VistA instance. The ZTMGRSET routine will configure the VistA instance by 
+renaming some system-specific routines. This is done using the command:
 
 
 .. parsed-literal::

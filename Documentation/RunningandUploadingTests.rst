@@ -9,7 +9,8 @@ Running and Uploading OSEHRA Tests
 
 The configuration process sets up the test environment and prepares the system to perform the test functions. Once configuration is complete the tests are ready to be run.
 
-Testing is run from a command prompt, such as the Terminal in Linux and either the Cygwin Shell , Git Bash Shell, or the Windows command prompt in Windows. From any of these options, changing directory (cd) to the Testing Binary Directory of your test installation and entering \"ctest\" will run every test that has been created. Other ctest options allow or disallow specific tests or groups of tests to be run. To see usage information for ctest along with the list of available options enter \"ctest --help\" (Figure 80).
+Testing is run from a command prompt, such as the Terminal in Linux and either the Cygwin Shell , Git Bash Shell, or the Windows command prompt in Windows. From any of these options, changing directory (cd) to the Testing Binary Directory of your test installation and entering \"ctest\" will run every test that has been created. Other ctest options allow or disallow specific tests or groups of tests to be run.
+To see usage information for ctest along with the list of available options enter \"ctest --help\".
 
 
 .. parsed-literal::
@@ -89,7 +90,7 @@ To display the tests that are currently available without actually performing th
     .
     .
 
-Entering the command \"ctest \- <string>\" (Figure 82) allows you to specify a test by regular expression match of the string that is passed along with it.
+Entering the command \"ctest \-R <string>\" allows you to specify a test by regular expression match of the string that is passed along with it.
 
 .. parsed-literal::
 
@@ -106,11 +107,11 @@ Entering the command \"ctest \- <string>\" (Figure 82) allows you to specify a t
            76 - XINDEX_NDBI (Failed)
   Errors while running CTest
 
-Among the most useful options to ctest is \"\-.\" The command \"ctest \- <Configuration>,\" with <Configuration> set to either Experimental, Nightly, or Continuous , will perform the testing and submit the test results to the OSEHRA Dashboard hosted at,
+Among the most useful options to ctest is \"\-D.\" The command \"ctest \-D <Configuration>,\" with <Configuration> set to either Experimental, Nightly, or Continuous , will perform the testing and submit the test results to the OSEHRA Dashboard hosted at,
 
  http://code.osehra.org/CDash/index.php?project=Open+Source+EHR
 
-CTest options can be combined and Figure 83 shows an example of combining the \"-D\"option for test execution and reporting with the \"-R\" option for selectively executing a set of tests.
+CTest options can be combined.  The following shows an example of combining the \"-D\"option for test execution and reporting with the \"-R\" option for selectively executing a set of tests.
 
 .. parsed-literal::
 
@@ -151,7 +152,9 @@ CTest options can be combined and Figure 83 shows an example of combining the \"
      Submission successful
   Errors while running CTest
 
-This method of running the tests through CTest is the same for either environment, as are the tests that are created.  Test creationt is done by gabbing each package name from the OSEHRA Code base folder.  This forms the name of the test and the routines that are contained inside the package.  This is done automatically, so as more packages are added to the code base overt time, the amount of XINDEX tests will grow accordingly.
+This method of running the tests through CTest is the same for either environment, as are the tests that are created.  Test creationt is done by gabbing 
+each package name from the OSEHRA Code base folder.  This forms the name of the test and the routines that are contained inside the package.  This is done 
+automatically, so as more packages are added to the code base over time, the amount of XINDEX tests will grow accordingly.
 
 **Note For Linux Users:**
 
@@ -165,8 +168,15 @@ The GT.M version doesn\'t automatically source the gtmprofile for manual testing
 
 Dashboard Scripts
 ``````````````````
-The "-S" option of CTest is also very useful when performing testing.  This option tells CTest to follow a script file that is passed to it as an arguement.  This option can be used to create, configure, generate and test a second set of testing code automatically.  It is accomplished by using a combination of a couple of machine specific files and the vista_common.cmake, held in the DashboardScripts folder of the OSEHRA testing code.
+The "-S" option of CTest is also very useful when performing testing.  This option tells CTest to follow a script file that is passed to it as an argument.
+  This option can be used to create, configure, generate and test a second set of testing code automatically.
+It is accomplished by using a combination of a couple of machine specific files and the vista_common.cmake.
 
-Two pairs of machine specific files have been included as a demonstration of how the files should be set up to run the testing correctly, held in the testing repository under the DashboardScripts/kitware/ directory.  The shell file is used to as the starting point for GT.M  testing and the batch file is used for Windows.  These two files call their respective CMake files, which sets values that will be used in during the configuration of the testing environment  This is equivalent to using the CMake GUI to set the necessary variables.
+Two pairs of machine specific files have been included as a demonstration of how the files should be set up to run the testing correctly.  The shell file 
+is used to as the starting point for GT.M  testing and the batch file is used for Windows. These two files call their respective CMake files, which sets 
+values that will be used in during the configuration of the testing environment  This is equivalent to using the CMake GUI to set the necessary variables.
 
-The last step is that the CMake files call the vista_common.cmake file.  This call starts the remainder of the automated testing.  The vista_common.cmake proceeds to clone or update both the testing and VistA git repositories. It will also configure and then generate the files and tests based upon the values given in the CMake files and values that it is able to find automatically.  The last step that the vista_common script performs is the running of all tests with a submission to the OSEHRA dashboard with a Nightly configuration.
+The last step is that the CMake files call the vista_common.cmake file.  
+This call starts the remainder of the automated testing.  The vista_common.cmake proceeds to clone or update both the testing and VistA git repositories. 
+It will also configure and then generate the files and tests based upon the values given in the CMake files and values that it is able to find automatically.  
+The last step that the vista_common script performs is the running of all tests with a submission to the OSEHRA dashboard with a Nightly configuration.
