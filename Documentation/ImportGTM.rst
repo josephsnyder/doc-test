@@ -11,12 +11,12 @@ Starting from an empty instance of GT.M, we need to retrieve the routines and gl
 
 .. parsed-literal::
 
-  $ :usertype:`git clone git://code.osehra.org/VistA-M.git`
-  Cloning into 'VistA-M'...
+  $ :usertype:`git clone git://code.osehra.org/VistA-FOIA.git`
+  Cloning into 'VistA-FOIA'...
   .
   .
   .
-  $ :usertype:`cd VistA-M`
+  $ :usertype:`cd VistA-FOIA`
 
 
 to make a local clone of the remote repository.
@@ -69,7 +69,7 @@ The routines.ro file that was created earlier is not formfeed delimited, so the 
 .. parsed-literal::
 
   Formfeed delimited <No>? :usertype:`<ENTER>`
-  Input Device: <terminal>: :usertype:`/home/osehra/Downloads/VistA-M/VistA-M/routines.ro`
+  Input Device: <terminal>: :usertype:`/home/osehra/Downloads/VistA-FOIA/routines.ro`
 
   Routines
 
@@ -107,7 +107,7 @@ Importing the globals is done with the use of a routine that was just imported. 
 
 .. parsed-literal::
 
- GTM> :usertype:`W $$LIST^ZGI("/path-to/VistA-M/globals.lst","/path-to/VistA-M/")`
+ GTM> :usertype:`W $$LIST^ZGI("/path-to/VistA-FOIA/globals.lst","/path-to/VistA-FOIA/")`
 
 Please note that the second string must end with a slash "/" given that it represent a directory path. If you omit the final "/" the command will not operate correctly.
 

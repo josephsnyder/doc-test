@@ -15,13 +15,13 @@ To obtain a copy of the repository, create a directory (Folder) to hold the repo
 .. parsed-literal::
 
 
-  $ :usertype:`git clone git://code.osehra.org/VistA-M.git`
-  Cloning into 'VistA-M'...
+  $ :usertype:`git clone git://code.osehra.org/VistA-FOIA.git`
+  Cloning into 'VistA-FOIA'...
   .
   .
   .
   $
-  $ :usertype:`cd VistA-M`
+  $ :usertype:`cd VistA-FOIA`
 
 
 to make a local clone of the remote repository.
@@ -37,9 +37,9 @@ Execute the following two commands to prepare the data for import .
 .. parsed-literal::
 
 
-  VistA-M$ :usertype:`git ls-files -- "*.m" | python Scripts/PackRO.py > routines.ro`
+  VistA-FOIA$ :usertype:`git ls-files -- "*.m" | python Scripts/PackRO.py > routines.ro`
 
-  VistA-M$ :usertype:`git ls-files -- "*.zwr" > globals.lst`
+  VistA-FOIA$ :usertype:`git ls-files -- "*.zwr" > globals.lst`
 
 
 
@@ -116,33 +116,33 @@ The next step is to import the Globals using the newly imported ZGI routine. Ent
 
 .. parsed-literal::
 
-  VISTA> :usertype:`D LIST^ZGI("c:/path/to/VistA-M/globals.lst","c:/path/to/VistA-M/")`
+  VISTA> :usertype:`D LIST^ZGI("c:/path/to/VistA-FOIA/globals.lst","c:/path/to/VistA-FOIA/")`
 
 where \"path\\to\" is replaced with the path to the code download . This routine will go through all of the globals contained in the list file and import them into the VistA instance . The last package to be imported is the Wounded Injured and Ill Warriors.  The example below will demonstrate the command and the first/last globals to be imported.  
 
 .. parsed-literal::
 
-  VISTA> :usertype:`D LIST^ZGI("C:/Users/joe.snyder/Desktop/testbin/globals.lst","C:/Users/joe.snyder/Desktop/VistA-M/")`
+  VISTA> :usertype:`D LIST^ZGI("C:/Users/joe.snyder/Desktop/testbin/globals.lst","C:/Users/joe.snyder/Desktop/VistA-FOIA/")`
 
-  C:/Users/joe.snyder/Desktop/VistA-M/Packages/Accounts Receivable/Globals/340+AR DEBTOR.zwr
+  C:/Users/joe.snyder/Desktop/VistA-FOIA/Packages/Accounts Receivable/Globals/340+AR DEBTOR.zwr
 
-  C:/Users/joe.snyder/Desktop/VistA-M/Packages/Accounts Receivable/Globals/341+AR EVENT.zwr
+  C:/Users/joe.snyder/Desktop/VistA-FOIA/Packages/Accounts Receivable/Globals/341+AR EVENT.zwr
 
-  C:/Users/joe.snyder/Desktop/VistA-M/Packages/Accounts Receivable/Globals/341.1+AR EVENT TYPE.zwr
+  C:/Users/joe.snyder/Desktop/VistA-FOIA/Packages/Accounts Receivable/Globals/341.1+AR EVENT TYPE.zwr
 
   .
   .
   .
 
-  C:/Users/joe.snyder/Desktop/VistA-M/Packages/Womens Health/Globals/790.72+WV AGE RANGE DEFAULT.zwr
+  C:/Users/joe.snyder/Desktop/VistA-FOIA/Packages/Womens Health/Globals/790.72+WV AGE RANGE DEFAULT.zwr
 
-  C:/Users/joe.snyder/Desktop/VistA-M/Packages/Womens Health/Globals/WV.zwr
+  C:/Users/joe.snyder/Desktop/VistA-FOIA/Packages/Womens Health/Globals/WV.zwr
 
-  C:/Users/joe.snyder/Desktop/VistA-M/Packages/Wounded Injured and Ill Warriors/Globals/987.5+WII ADMISSIONS DISCHARGES.zwr
+  C:/Users/joe.snyder/Desktop/VistA-FOIA/Packages/Wounded Injured and Ill Warriors/Globals/987.5+WII ADMISSIONS DISCHARGES.zwr
 
-  C:/Users/joe.snyder/Desktop/VistA-M/Packages/Wounded Injured and Ill Warriors/Globals/987.6+WII PARAMETERS.zwr
+  C:/Users/joe.snyder/Desktop/VistA-FOIA/Packages/Wounded Injured and Ill Warriors/Globals/987.6+WII PARAMETERS.zwr
 
-  C:/Users/joe.snyder/Desktop/VistA-M/Packages/Wounded Injured and Ill Warriors/Globals/WII.zwr
+  C:/Users/joe.snyder/Desktop/VistA-FOIA/Packages/Wounded Injured and Ill Warriors/Globals/WII.zwr
 
 
   VISTA>
