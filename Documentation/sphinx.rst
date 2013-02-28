@@ -14,32 +14,52 @@ These pages describe the steps required to obtain the OSEHRA open source VistA c
 
 The instructions comprise six sections corresponding to:
 
-  ObtainingandInstallAuxPrograms.rst
-  ChoosingMUMPSEnvironment.rst
+.. toctree::
+  :maxdepth: 2
+  
+  ObtainingandInstallAuxPrograms
+  ChoosingMUMPSEnvironment
 
 For the following two sections, follow the instructions based upon which type of MUMPS database will be utilized:
 
 Cache:
 
-  InstallCache.rst
-  ImportCache.rst
+.. toctree::
+  :maxdepth: 1
+  
+  InstallCache
+  ImportCache
   
 GT.M:
 
-  InstallGTM.rst
-  ImportGTM.rst
+.. toctree::
+  :maxdepth: 1  
+  
+  InstallGTM
+  ImportGTM
   
 The last sections are common to both types of systems:
 
-  ObtainingTestingCode.rst
-  SetupTestingEnvironment.rst
-  RunningandUploadingTests.rst
-  ReviewingResults.rst
+.. toctree::
+  :maxdepth: 2
+
+  ObtainingTestingCode  
+  SetupTestingEnvironment
+  RunningandUploadingTests
+  ReviewingResults
 
 Troubleshooting:
 ````````````````
 
 To report a problem or see potential solutions visit the `Troubleshooting Page`_
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
 
 
 .. _`Troubleshooting Page`: http://www.osehra.org/wiki/troubleshooting-installation-and-testing
