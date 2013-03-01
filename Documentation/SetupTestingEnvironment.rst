@@ -206,7 +206,7 @@ If you plan to use these options, there are more variables that need to be set:
       TEST_VISTA_GLOBAL_IMPORT_TIMEOUT             Length of Timeout for Global Import         Length of Timeout for Global Import 
       TEST_VISTA_FRESH                                         ON                                        ON
       TEST_VISTA_FRESH_CACHE_DAT_EMPTY             Path to an empty CACHE.dat                            N/A
-      TEST_VISTA_FRESH_CACHE_DIR_VISTA           Path to folder containing VistA Cache.dat               N/A
+      TEST_VISTA_FRESH_CACHE_DAT_VISTA           Path to CACHE.dat that holds VistA                      N/A
       TEST_VISTA_FRESH_GTM_GLOBALS_DAT                          N/A                           Path to the database.dat with VistA
       TEST_VISTA_FRESH_GTM_ROUTINE_DIR                          N/A                           Path to folder that contains VistA 
                                                                                               routines
