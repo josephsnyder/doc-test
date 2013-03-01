@@ -22,21 +22,23 @@ For VistA testing, the generator does nothing and it therefore not used. We reco
    :align: center
    :alt:  Generator selection.
 
-Following generator selection, the interface will produce a highlighted display such as :alt:  for Linux:
+Following generator selection, the interface will produce a highlighted display such as for Linux:
 
 
 .. figure:: http://code.osehra.org/content/named/SHA1/7433a9bf-cmakeGUILinuxPostConfig.png
    :align: center
    :alt:  Linux interface after generator selection is complete.
 
-and :alt:  for Windows.
+and for Windows:
 
 .. figure:: http://code.osehra.org/content/named/SHA1/f943a02c-cmakeGUIWinPostConfig.png
    :align: center
    :alt:  Windows interface after generator selection is complete.
 
- The entries in the window are the variables which can be set to control the testing process. Most of the values should be set correctly by the automated configuration process, but the scripting environment and the location of the VistA source code may need to be set appropriately. To aid in the configuring, most variables have a mouse-over tip which explains in greater detail what the variable should
- contain.NOTE: The "Found" messages for each of the programs will only be displayed on the initial configuration of the system.  To see the variables at a later date, follow the instructions at the bottom of this page.
+The entries in the window are the variables which can be set to control the testing process. Most of the values should be set correctly by the automated configuration process, but the 
+scripting environment and the location of the VistA source code may need to be set appropriately. To aid in the configuring, most variables have a mouse-over tip which explains in greater
+detail what the variable should contain.  NOTE: The "Found" messages for each of the programs will only be displayed on the initial configuration of the system.  To see the variables at a
+later date, follow the instructions at the bottom of this page.
 
 The variables found after the first configure are very straight forward.
 
@@ -175,7 +177,7 @@ This information is required to be there for the functional tests to complete su
 
 
 To utilize this option on Cache, the TEST_VISTA_FRESH checkbox must be checked to tell CMake to configure the correct files. You will also need to create a new cache.dat using the steps
-from earlier (starting at :alt: ) and set the TEST_VISTA_FRESH_CACHE_DAT_EMPTY to point to the location of that newly created cache.dat.  It will then shut down the Cache instance,
+from earlier and set the TEST_VISTA_FRESH_CACHE_DAT_EMPTY to point to the location of that newly created cache.dat.  It will then shut down the Cache instance,
 copy the empty database in place of the old one, restart Cache, then collect and import the OSEHRA routines and globals. 
 
 
