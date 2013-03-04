@@ -14,7 +14,7 @@ Trial versions of the Cache installer can be downloaded from http://download.int
 Download and Install Cache
 --------------------------
 
-Download the Cache installer from the above link and double click on the downloaded  .exe file. The first window that requires interaction is the Licensing Agreement shown in :alt: . Agree to the license in order to continue in the installation process.
+Download the Cache installer from the above link and double click on the downloaded  .exe file. The first window that requires interaction is the Licensing Agreement shown in the figure below. Agree to the license in order to continue in the installation process.
 
 .. figure:: http://code.osehra.org/content/named/SHA1/df177515-Cache2011License.png
    :align: center
@@ -83,6 +83,7 @@ At this point we are ready to stand up the VistA instance. Right click on the Ca
    :alt:  Management Portal link in Cache
 
 This link will open a Management Portal web page.  Click on System Administration to show administrative options.
+
 .. figure:: http://code.osehra.org/content/named/SHA1/747ca57e-Cache2011SysMgtMain.png
    :align: center
    :alt:  Main page of the Management Portal
@@ -146,7 +147,7 @@ Verify that the new namespace is now in the list of current namespaces.
 
 The next steps will be configuring the global and routine mappings, both of which are accessed from this page. We will focus on the global mapping first.
 
- .. figure:: http://code.osehra.org/content/named/SHA1/d596025-Cache2011GlobalMappingSelect.png
+ .. figure:: http://code.osehra.org/content/named/SHA1/d5960250-Cache2011GlobalMappingSelect.png
     :align: center
     :alt:  Namespace listing with the new namespace in it. The boxes highlight the links for mapping globals and routines.
 
